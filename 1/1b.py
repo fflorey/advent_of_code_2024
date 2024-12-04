@@ -1,30 +1,31 @@
 import re
 
-def replace_numbers(line):
-    numberStr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    
-    for i in range(len(numberStr)):
-        line = line.replace(numberStr[i], numberStr[i][0]+ digits[i] + numberStr[i])
-    
-    return line
-
-lines = []
+# Step 1: Read the contents of "input.txt"
 with open("input.txt", "r") as file:
     lines = file.readlines()
 
+# Step 2: Split each line into two integers and store them in separate arrays
+array1 = []
+array2 = []
 
-total_sum = 0
-for i in range(len(lines)):
-    lines[i] = replace_numbers(lines[i])
-    lines[i] = lines[i].strip()
-    print(lines[i])
-    numbers = re.findall(r'\d', lines[i])
-    print(numbers)
-    total_sum += (int(numbers[0]) *10 + int(numbers[-1]))
+for line in lines:
+    num1, num2 = map(int, line.split())
+    array1.append(num1)
+    array2.append(num2)
 
-print(total_sum)
+# Step 3: Sort both arrays
+array1.sort()
+array2.sort()
 
-total_sum = 0
+# Step 4: Loop over the sorted arrays and print the difference
+mysum = 0
+for num1 in array1:
+    # print num1, numw and num1-num2
+    print(num1, array2.count(num1))
+    mysum += num1*array2.count(num1)      
+    
+# Step 5: Print the sum of the differences
+print('Sum: ', mysum)
+
 
 

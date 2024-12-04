@@ -1,19 +1,31 @@
 import re
 
-lines = []
+# Step 1: Read the contents of "input.txt"
 with open("input.txt", "r") as file:
     lines = file.readlines()
 
-total_sum = 0
-for line in lines:
-    numbers = re.findall(r'\d', line)
-    print(numbers)
-    if numbers:
-        first_number = int(numbers[0])
-        last_number = int(numbers[-1])
-        print(first_number, last_number)
-        total_sum += (first_number *10 + last_number)
+# Step 2: Split each line into two integers and store them in separate arrays
+array1 = []
+array2 = []
 
-print(total_sum)
+for line in lines:
+    num1, num2 = map(int, line.split())
+    array1.append(num1)
+    array2.append(num2)
+
+# Step 3: Sort both arrays
+array1.sort()
+array2.sort()
+
+# Step 4: Loop over the sorted arrays and print the difference
+mysum = 0
+for num1, num2 in zip(array1, array2):
+    # print num1, numw and num1-num2
+    print(num1, num2, num1 - num2)
+    # add the difference to the sum
+    mysum += abs(num1 - num2)
+# Step 5: Print the sum of the differences
+print('Sum: ', mysum)
+
 
 
