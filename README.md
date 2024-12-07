@@ -27,4 +27,16 @@ a) Many rules ("page ordering rules") between integers can be interpreted as a d
 
 b) The incorrect sequences must be corrected: start from beginning of the sequence and if there is no edge between to nodes, just exchange the nodes and try again for the sequence. This solution is possible, because we know that **every** sequence can be corrected. 
 
+### Day 6:
+a) Just traveling through a maze... i did it just without thinking, straingforward
+
+b) We need to place a something in the way, so that we are endlessly caught in the maze. I did it, but it is a total mess as i use EVERY plot of the maze in my solution. After more thinking, it should be simply enough to use any field which we walked through in solution a. My solution works, but it of course it is very slow and inefficient.
+
+### Day 7:
+a) After thinking a lot of time (i am getting old) you see, that this is a simple tree-search and therefor a simple recursive solution. After doing the thinking, the implementation is really very easy
+
+b) Ok... just takes 2 more lines - too easy for a part b on day 7 - but ok for an old man ;-)
+
+
+
 
