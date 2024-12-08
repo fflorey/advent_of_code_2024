@@ -41,7 +41,7 @@ b) Ok... just takes 2 more lines - too easy for a part b on day 7 - but ok for a
 
 a) Not much to say, nothing special, calculating a little bit and checking allready taken positions in the representation of a map
 
-b) Some more calculations, nothing special here either. The only thing which took me some time: Read the exercise carefully! In contrast to exercise 8a, in 8b the "antennas" needs to be taken into account, but not all of them ;-).  
+b) Some more calculations, nothing special here either. The only thing which took me some time: to read and understand the exercise ;-)! In contrast to exercise 8a, in 8b the "antennas" needs to be taken into account, but not all of them...  
 
 
 
