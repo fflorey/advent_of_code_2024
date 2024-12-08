@@ -33,9 +33,15 @@ a) Just traveling through a maze... i did it just without thinking, straingforwa
 b) We need to place a something in the way, so that we are endlessly caught in the maze. I did it, but it is a total mess as i use EVERY plot of the maze in my solution. After more thinking, it should be simply enough to use any field which we walked through in solution a. My solution works, but it of course it is very slow and inefficient.
 
 ### Day 7:
-a) After thinking a lot of time (i am getting old) you see, that this is a simple tree-search and therefor a simple recursive solution. After doing the thinking, the implementation is really very easy
+a) After thinking for a long time (i am getting old) i was able to see, that this is a simple tree-search and therefor a simple recursive solution. After doing the thinking, the implementation is really very easy
 
 b) Ok... just takes 2 more lines - too easy for a part b on day 7 - but ok for an old man ;-)
+
+### Day 8:
+
+a) Not much to say, nothing special, calculating a little bit and checking allready taken positions in the representation of a map
+
+b) Some more calculations, nothing special here either. The only thing which took me some time: Read the exercise carefully! In contrast to exercise 8a, in 8b the "antennas" needs to be taken into account, but not all of them ;-).  
 
 
 
