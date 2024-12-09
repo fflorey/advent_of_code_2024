@@ -43,6 +43,10 @@ a) Not much to say, nothing special, calculating a little bit and checking allre
 
 b) Some more calculations, nothing special here either. The only thing which took me some time: to read and understand the exercise ;-)! In contrast to exercise 8a, in 8b the "antennas" needs to be taken into account, but not all of them...  
 
+### Day 9:
 
+a) A bit annoying exercise. I had no good ideas, so i just implemented it straight forward - but it took some time. Playing around with lists... 
+
+b) Same as a... not really difficult, but took me some time because of all the step-by-step looking at what happens. I am getting old ;-)
 
 
