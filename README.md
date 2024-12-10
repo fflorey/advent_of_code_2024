@@ -49,4 +49,8 @@ a) A bit annoying exercise. I had no good ideas, so i just implemented it straig
 
 b) Same as a... not really difficult, but took me some time because of all the step-by-step looking at what happens. I am getting old ;-)
 
+### Day 10:
 
+a) Ok, nice exercise. It is a kind of breitensuche, recursiv function can solve that. I made the mistake to solve accidently part b), so took some time to read the exercise carefully and solving it afterwards.
+
+b) Ok, after solving part b) accidently, this was done in minutes. But nice.
