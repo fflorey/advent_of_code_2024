@@ -54,3 +54,35 @@ b) Same as a... not really difficult, but took me some time because of all the s
 a) Ok, nice exercise. It is a kind of breitensuche, recursiv function can solve that. I made the mistake to solve accidently part b), so took some time to read the exercise carefully and solving it afterwards.
 
 b) Ok, after solving part b) accidently, this was done in minutes. But nice.
+
+### Day 11: the stones...
+
+a) Part a was done as described, splitting some "stones" and inserting them into the list... but...
+
+b) I almost failed this time: There is no way to work on the list, as it grows exponentially. After a really long time to think and starring at the numbers, i finaly got it: The numbers on the stones **do not** grow that fast, not even linear with the length of the list. So just work on a dictionary to store the stones with certain numbers, as the order is not needed. Puh...
+
+Took me more than 90 minutes - so: after work party
+
+### Day 12: the fences and the plants
+
+a) Nothing special here, work around on the map, count your steps, "place" fences, count at the end
+
+b) Well, there might be a lot of solutions for that. I used the solution for a and added information about the direction during walking through the map to each fence. After that, i analyze the fences and check if they are neighbours and if their direction is identical.
+
+Took me more than 90 minutes - so: after work party
+
+### Day 13: that claw machine
+
+a)  Two buttons, one target. Exercise *a* was done by me with a brute force solution. But it was clear, that this might not be feasable for b)
+
+b) And yes, no way to use it for b). The solution here is to solve a linear matrix (?... my english) and google helped me to find numpy for that kind of stuff. But: I took me a while to understande, that the precision with the python implementation lead to some errors. So i did it the dirty way again: Find a solution with numpy, then using a brute force solution to find the exact position, accepting only integers. Sound weird, but it works. 
+
+Took me more than 90 minutes - so: after work party
+
+### Day 14: the robots, the restroom and...
+
+a) Easy, just calculation some position on a map. Really, easy. Could be a exercise for day 1
+
+b) But then came b!) And b is really wonderfull! Finally, i learned a lot about modulu ('%'-operator), and it is impressive, of how humans are able to identify a christmas tree! Really, a wonderful, surprising exercise as part b).
+
+And it is weekende - so no worry about the time - perfect for this one!
