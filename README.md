@@ -86,3 +86,5 @@ a) Easy, just calculating some position on a map. Really, easy. Could be a exerc
 b) But then came b!) And b is really wonderfull! Finally, i learned a lot about modulu ('%'-operator), and it is impressive, of how humans are able to identify a christmas tree! Really, a wonderful, surprising exercise as part b).
 
 And it is weekend - so no worry about the time i spent here  - perfect for this one!
+
+![alt text](14/20241214_Christmal_Tree.png)
