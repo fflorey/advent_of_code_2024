@@ -1,0 +1,107 @@
+import math
+from functools import reduce
+
+def read_input_file(file_path):
+    data = []
+    with open(file_path, 'r') as file:
+        for line in file:
+            parts = line.split()
+            x, y = map(int, parts[0][2:].split(','))
+            vx, vy = map(int, parts[1][2:].split(','))
+            data.append(((x, y), (vx, vy)))
+    return data
+
+data = read_input_file('input.txt')
+# print(f"read_input_file('input.txt') = {data}")
+data=[((4,4),(2,-3))]
+
+# for all robots, find the number of steps needed to reach the middle of the map in x direction
+ROWS=7
+COLS=11
+
+check_middle={}
+for robot in data:
+    x, y = robot[0]
+    vx, vy = robot[1]
+    steps = 2
+    for i in range(5):
+        print("i: ",i, "x: ",x, "COLS//2: ",COLS//2, "Steps: ",steps, "vx: ",vx)
+        while True:
+            x += vx
+            print("x: ",x)
+            x %= COLS
+            steps += 1
+            # if x == COLS // 2:
+            if x ==  4:
+                break
+        print(f"robot {robot} needs {steps} steps to reach the middle in x direction (x={x})")
+        print(f"i {i} x:{x} is equal to robot[0][1]: ",robot[0][0], (robot[0][0]+(steps*vx))%COLS)
+
+    final_y=(robot[0][1]+steps*vy)%COLS
+    print("final_y: ",final_y, "final_x: ",(robot[0][0]+(steps*vx))%COLS)   
+    if check_middle.get(x):
+        print("y",final_y,"allready in check_middle")
+    if steps>0:
+        check_middle[final_y]=steps
+
+# multiply all the steps to get the result
+result = 1
+print("check_middle: ",check_middle, "len: ",len(check_middle))
+
+
+def lcm(a, b):
+    return abs(a*b) // math.gcd(a, b)
+
+def lcm_list(numbers):
+    return reduce(lcm, numbers)
+
+
+print("Das kleinste gemeinsame Vielfache ist:", lcm_list(check_middle.values()))
+min_steps= lcm_list(check_middle.values())
+
+steps=0
+
+for steps in range(1,5):
+
+    final_list=[]
+    steps=min_steps*steps
+    print("steps: ",steps)
+    for robot in data:
+        print("r",robot, robot[1][0], robot[1][1])
+        final_x=(robot[0][0]+steps*robot[1][0])%COLS
+        final_y=(robot[0][1]+steps*robot[1][1])%ROWS
+        final_list.append((final_x,final_y))
+
+    # print("fl: ",final_list)
+    # visualize the final list in a ROWS x COLS grid
+        # IMAGE
+    print(f"steps: {steps}")
+    grid = [['.' for _ in range(COLS)] for _ in range(ROWS)]
+    for x,y in final_list:
+        grid[y][x] = '#'
+
+    for row in grid:
+        print(''.join(row))
+
+# count all robots in the four quadrants of the map. The middle lines do not count
+# as part of the quadrants.
+quadrants = [0, 0, 0, 0]
+for x, y in final_list:
+    # print (x,y, "M: ",COLS//2, ROWS//2)
+    if y == ROWS//2 or x == COLS//2:
+        continue
+    if y < ROWS // 2:
+        if x < COLS // 2:
+            quadrants[0] += 1
+        else:
+            quadrants[1] += 1
+    else:
+        if x < COLS // 2:
+            quadrants[2] += 1
+        else:
+            quadrants[3] += 1
+
+# print("quadrants: ",quadrants)
+# multiply all the quadrants to get the result
+result = quadrants[0] * quadrants[1] * quadrants[2] * quadrants[3]
+print("result: ",result)
