@@ -95,7 +95,7 @@ a) moving "goods" around in a maze - ok, nice, took some time, but a nice one fo
 
 b) Oh, the "goods" are not wider, same to the maze. That brings up more interesting possibilities to move them around. Took me a lot of time and i learned some more about python... i liked that one.
 
-### Day 16: Dykstra...
+### Day 16: Dijkstra...
 
 a) Ok, that day had to come, and here it is. Solving this one means you need to know about some graph.theorie. And yes, better you use some libraries for this one
 
