@@ -88,3 +88,18 @@ b) But then came b!) And b is really wonderfull! Finally, i learned a lot about 
 And it is weekend - so no worry about the time i spent here  - perfect for this one!
 
 ![alt text](14/20241214_Christmal_Tree.png)
+
+### Day 15: pixel game
+
+a) moving "goods" around in a maze - ok, nice, took some time, but a nice one for 3rd advent 
+
+b) Oh, the "goods" are not wider, same to the maze. That brings up more interesting possibilities to move them around. Took me a lot of time and i learned some more about python... i liked that one.
+
+### Day 16: Dykstra...
+
+a) Ok, that day had to come, and here it is. Solving this one means you need to know about some graph.theorie. And yes, better you use some libraries for this one
+
+b) Even harder. To be honest, at the end i used bing and copilot to solve this one. A little bit frustrating. 
+
+No, i don't like these ones... Hope for tomorrow. But from now on, it might be much, much harder.
+
