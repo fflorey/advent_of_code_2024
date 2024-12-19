@@ -75,25 +75,36 @@ def cdv ( combo_operand ):
 imap = { 0:"adv", 1:"bxl", 2:"bst", 3:"jnz", 4:"bxc", 5:"out", 6:"bdv", 7:"cdv" }
 
 print("imap[0]: ", imap[0])
+original_instructions = instructions.copy()
+original_registers = registers.copy()
 output_buffer = []
-instruction_ptr=0
-while instruction_ptr<len(instructions):
-    instruction=instructions[instruction_ptr]
-    oppcode=instructions[instruction_ptr+1]
-    instruction_ptr+=2
-    print(f"Instruction: {instruction} Oppcode: {oppcode}")
-    # perform the instruction
-    istr = imap[instruction]+'('+str(oppcode)+')'
-    print(f"Performing: {istr}")
-    eval(istr)
-    print("done....")
-    print(f"Registers: {registers}")
-    print(f"Output: {output_buffer}")
-    print(f"Instruction Pointer: {instruction_ptr}")
-    print("")
-    
+i=0
+while True:
+    instructions = original_instructions.copy()
+    instruction_ptr=0
+    registers = original_registers.copy()
+    output_buffer = []
+    registers['A'] = i
+    print("Trying with reg A:", i)
+    i+=1
+    while instruction_ptr<len(instructions):
+        instruction=instructions[instruction_ptr]
+        oppcode=instructions[instruction_ptr+1]
+        instruction_ptr+=2
+        # print(f"Instruction: {instruction} Oppcode: {oppcode}")
+        # perform the instruction
+        istr = imap[instruction]+'('+str(oppcode)+')'
+        # print(f"Performing: {istr}")
+        eval(istr)
+        # print("done....")
+        # print(f"Registers: {registers}")
+        # print(f"Output: {output_buffer}")
+        # print(f"Instruction Pointer: {instruction_ptr}")
+        # print("")
+        # input()
+    if output_buffer == original_instructions:
+        print("Found! with reg A:", i)
+        break
+        
 
-print("Result (output_bufer as string, seperated by comma): ", ",".join(map(str,output_buffer)))   
-print("instruction_ptr:", instructions)
-print("Output:", len(output_buffer))
-print(len(instructions))     
+print("Result (output_bufer as string, seperated by comma): ", ",".join(map(str,output_buffer)))    
