@@ -103,13 +103,13 @@ b) Even harder. To be honest, at the end i used bing and copilot to solve this o
 
 No, i don't like these ones... Hope for tomorrow. But from now on, it might be much, much harder.
 
-### Day 17: that 7-bit machine...
+### Day 17: that 7-bit machine showed me my limits
 
 a) straight forward - i just implemented all the required functions (bxl, adv, etc.), parsed the input and runs smoothly. I really felt good, but then came part b!
 
 b) ... really, no idea. Simply no idea. I tried for hours to see something, but no way. I know a lot about the statements, tried to implement a "reverse" machine but it all failed. So, no solution for b. Bits are shifting around, the solution has 16 * 3 bits, i do know all of that, but how...
 
-### Day 18:
+### Day 18: that easy?!?
 
 a) After my personal deasaster with day 17, that was (too) easy, as wehave another maze and i just reused day 16. And waited for the horror of b... but...
 
@@ -121,4 +121,12 @@ a) Easy, nice. Nothing so speacial, i implemented this with a recusrive function
 
 b) My solution worked for the simple input (the smaller exmaple). With the real data, my solution wrote 16 GB of logfile before i stopped the mess. I wasn't able to calculate the result for not even one of the possible inputs - and there are 400! So - again (after day 16), no idea. But what i did then was embarassing and it becamme my personal ground zero: I used copilot. But not the "normal" way, so just like a better code completion. I just opened the chat window and pasted the whole input text from Day 19 into it. I got a program as a result. I simply pasted my code for reading the input from a file, and started the code. It generated a wrong number for the overall result. So i said, hey, the result should be 16 (as it is stated in the exercise - and as my own program showed for the smaller input file). So, it did some corrections. I started, and boom: 16. Ok, i didn't look at the solution, just changed the filename to the larger input file. Then again. and BOOOM: after not even one second a huge number (> 10^15) shows up. I did a copy/paste, and now i had two stars, and NO IDEA how that solution was working. I just asked copilot, and i got a lot of explanations about "Dymamic Programming". Ok, well... yes... but... how... 
 Ok, but officially i cheated - and so i am out (and Dirk will win the pocal)
+
+### Day 20: The maze - with flashes
+
+a) Ok, i disqualified myself - but i continue. Part a ist relativly easy - i just solved it as it was supposed to be done by the exercise. So, just looking around at each position while walking. If there is a "tunnel", is just removed the wall and measured the way from start to end. Took some time, but the result was correct. 
+
+b) Of course, this solution does not work for part b. My first simpel approach was: Ok, if i can flash a maximum of 20, this is the same as removing all walls from within the current position. From a graphical standpoint the algorithm worked like: Count the moves to the actual position on the path, blow away all walls *at every position on the whole path* in a radius of X, then measure the path to the exit. Well, yes, that works, but is off course much too slow. So i just did it more correct: Measure the distance to the exit from every possible field on the path. Then walk through the maze, and at every position, find all possibles points where it is possible to flash to. Then just add the steps to the specific field + the manhatten distance to the flash-target-field + the already measured distance from the target-field to the exit. Gives the correct answer.
+
+Overall, 20 was surprisingly easy...
 
