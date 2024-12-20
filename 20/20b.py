@@ -79,19 +79,19 @@ def find_possible_jumps(maze, pos, radius):
         for c in range(-radius, radius + 1):
             if abs(r) + abs(c) <= radius:
                 new_r, new_c = pos[0] + r, pos[1] + c
-                if 0 <= new_r < len(maze) and 0 <= new_c < len(maze[0]) and maze[new_r][new_c] != '#':
+                if 0 < new_r < len(maze) and 0 < new_c < len(maze[0]) and maze[new_r][new_c] != '#':
                     possible_jumps.append((new_r, new_c))
     return possible_jumps
 
 ##############################################################################
 # Main
 
-file_path = 'input.txt.small'  
+file_path = 'input.txt'  
 maze = read_maze(file_path)
 start, end, walls, path = find_positions(maze)
 
-MINIMUM_SAVING_TIME=10
-RADIUS=2
+MINIMUM_SAVING_TIME=100
+RADIUS=20
 
 
 normal_time=find_cheapest_path(maze, start, end)
@@ -103,8 +103,8 @@ print("INITIAL TIME MAP! (len:   ", len(path), ")     ")
 counter=0
 for pos in path:
     time_map[pos]=find_cheapest_path(maze, pos, end)
-    home_screen()
-    print(f"    counter: {counter}   - time from point {pos} to end: ", time_map[pos])
+    # home_screen()
+    # print(f"    counter: {counter}   - time from point {pos} to end: ", time_map[pos])
     counter +=1
 
 print("Picoseconds to exit: ", normal_time)
